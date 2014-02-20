@@ -6,7 +6,7 @@
     <machine name="c2_src" address="finder-thinkpad" env-loader="~/workspace/catkin/devel/env.sh" user="finder-think" password="finder-think" />
     <machine name="c2_opt" address="finder-thinkpad" env-loader="/opt/ros/hydro/env.sh" user="finder-think" password="finder-think" />
 
-    <node machine="c1_opt" name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen">
+    <node machine="c2_opt" name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen">
 	    <param name="video_device" value="/dev/video1" />
 	    <param name="image_width" value="320" />
 	    <param name="image_height" value="240" />
@@ -22,7 +22,7 @@
 	</node>
 -->
 	
-	<node machine="c1_src" pkg="navigation" name="detector_humanos" type="detector_humanos">
+	<node machine="c2_src" pkg="navigation" name="detector_humanos" type="detector_humanos">
 		<remap from="/usb_cam1/image_raw" to="/usb_cam/image_raw" />
 	</node>
 	
