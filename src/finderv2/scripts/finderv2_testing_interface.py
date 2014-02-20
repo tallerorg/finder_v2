@@ -50,7 +50,7 @@ class Finderv2TestingInterface:
         self.rightpad = 0
 
         #str = roslib.packages.get_pkg_dir('finder') + "/scripts/finderv2_testing_interface.glade"
-        str = "/home/jakob/workspace/catkin/src/finder/scripts/finderv2_testing_interface.glade"
+        str = "~/workspace/catkin/src/finder/scripts/finderv2_testing_interface.glade"
         self.gladefile = str
 
         builder = Gtk.Builder()
