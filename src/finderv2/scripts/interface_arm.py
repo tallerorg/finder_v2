@@ -28,6 +28,10 @@ class Interface_arm:
         self.sa1 = rospy.Subscriber("servo_arm_1", Int16, self.cbsa1)
         self.sa2 = rospy.Subscriber("servo_arm_2", Int16, self.cbsa2)
         self.sag = rospy.Subscriber("servo_arm_gripper", Int16, self.cbsag)
+        
+        self.mun1 = 0
+        self.mun2 = 0
+        self.mun3 = 0
     
     def cbmab(self, data):
         self.armData.dof1 = data.data
@@ -36,11 +40,14 @@ class Interface_arm:
     def cbma2(self, data):
         self.armData.dof3 = data.data * .5
     def cbsa1(self, data):
-        self.armData.dof4 = data.data + 60
+		self.mun1 = self.mun1 + data.data
+        self.armData.dof4 = self.mun1 + 60
     def cbsa2(self, data):
-        self.armData.dof5 = data.data * .5
+		self.mun2 = self.mun2 + data.data
+        self.armData.dof5 = self.mun2 * .5
     def cbsag(self, data):
-        self.armData.dof6 = data.data * 1
+		self.mun3 = self.mun3 + data.data
+        self.armData.dof6 = self.mun3 * 1
         
     def update(self):
         self.armPub.publish(self.armData)
