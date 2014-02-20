@@ -44,7 +44,7 @@ class Interface_arm:
 		self.armData.dof4 = self.mun1 + 60
     def cbsa2(self, data):
 		self.mun2 = self.mun2 + data.data
-		self.armData.dof5 = self.mun2 * .5
+		self.armData.dof5 = self.mun2 * 1
     def cbsag(self, data):
 		self.mun3 = self.mun3 + data.data
 		self.armData.dof6 = self.mun3 * 1
