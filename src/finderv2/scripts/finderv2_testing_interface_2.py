@@ -167,8 +167,8 @@ class Finderv2TestingInterface:
 				self.motor_traction_right_value = self.left_pad
 		else:
 			self.motor_arm_base_value = self.trigger
-			self.motor_arm_1_value = self.left_pad
-			self.motor_arm_2_value = self.right_pad
+			self.motor_arm_1_value = self.left_pad*-1
+			self.motor_arm_2_value = self.right_pad*-1
 			self.servo_arm_1_value = self.left_button - self.right_button
 			self.servo_arm_2_value = self.vertical_arrow
 			self.servo_arm_gripper_value = self.horizontal_arrow
@@ -186,32 +186,32 @@ class Finderv2TestingInterface:
 		self.pub11.publish(self.motor_traction_arm_br_value)
 		self.pub12.publish(self.motor_traction_arm_bl_value)
 
-		# print "Inicio"
-		# print self.motor_arm_base_value
-		# print self.motor_arm_1_value
-		# print self.motor_arm_2_value
-		# print self.servo_arm_1_value
-		# print self.servo_arm_2_value
-		# print self.servo_arm_gripper_value
-		# print self.motor_traction_left_value
-		# print self.motor_traction_right_value
-		# print self.motor_traction_arm_fr_value
-		# print self.motor_traction_arm_fl_value
-		# print self.motor_traction_arm_br_value
-		# print self.motor_traction_arm_bl_value
-		# print self.mode
+		print "Inicio"
+		print self.motor_arm_base_value
+		print self.motor_arm_1_value
+		print self.motor_arm_2_value
+		print self.servo_arm_1_value
+		print self.servo_arm_2_value
+		print self.servo_arm_gripper_value
+		print self.motor_traction_left_value
+		print self.motor_traction_right_value
+		print self.motor_traction_arm_fr_value
+		print self.motor_traction_arm_fl_value
+		print self.motor_traction_arm_br_value
+		print self.motor_traction_arm_bl_value
+		print self.mode
 
-		# print "Ejes"
-		# print self.left_trigger
-		# print self.right_trigger 
-		# print self.trigger
-		# print self.left_button
-		# print self.right_button
-		# print self.a_button
-		# print self.vertical_arrow
-		# print self.horizontal_arrow
-		# print self.left_pad
-		# print self.right_pad
+		print "Ejes"
+		print self.left_trigger
+		print self.right_trigger 
+		print self.trigger
+		print self.left_button
+		print self.right_button
+		print self.a_button
+		print self.vertical_arrow
+		print self.horizontal_arrow
+		print self.left_pad
+		print self.right_pad
 			
 		return 1
         
