@@ -10,6 +10,8 @@ import roslib
 from std_msgs.msg import Int16
 from sensor_msgs.msg import Joy
 
+from os.path import expanduser
+
 class Finderv2TestingInterface:
     
     def __init__(self, node_name_override = 'finderv2_testing_interface'):
@@ -50,7 +52,7 @@ class Finderv2TestingInterface:
         self.rightpad = 0
 
         #str = roslib.packages.get_pkg_dir('finder') + "/scripts/finderv2_testing_interface.glade"
-        str = "~/workspace/catkin/src/finderv2/scripts/finderv2_testing_interface.glade"
+        str = expanduser("~") + "/workspace/catkin/src/finderv2/scripts/finderv2_testing_interface.glade"
         self.gladefile = str
 
         builder = Gtk.Builder()
