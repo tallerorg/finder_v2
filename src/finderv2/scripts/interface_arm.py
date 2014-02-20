@@ -40,16 +40,16 @@ class Interface_arm:
     def cbma2(self, data):
         self.armData.dof3 = data.data * .8
     def cbsa1(self, data):
-        self.mun1 = self.mun1 + data.data * 10
+        self.mun1 = self.constrain(self.mun1 + data.data * 10, -127, 127)
         self.armData.dof4 = self.mun1 + 60
     def cbsa2(self, data):
-        self.mun2 = self.mun2 + data.data * 10
+        self.mun2 = self.constrain(self.mun2 + data.data * 10, -90, 90)
         self.armData.dof5 = self.mun2
     def cbsag(self, data):
-        self.mun3 = self.mun3 + data.data * 10
+        self.mun3 = self.constrain(self.mun3 + data.data * 10, -127, 127)
         self.armData.dof6 = self.mun3
         
-    def constrain(val, min, max):
+    def constrain(self, val, min, max):
         if val < min:
             return min
         if val > max:
