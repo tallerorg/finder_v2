@@ -36,9 +36,9 @@ class Interface_arm:
     def cbmab(self, data):
         self.armData.dof1 = data.data
     def cbma1(self, data):
-        self.armData.dof2 = data.data * .5
+        self.armData.dof2 = data.data * .8
     def cbma2(self, data):
-        self.armData.dof3 = data.data * .5
+        self.armData.dof3 = data.data * .8
     def cbsa1(self, data):
         self.mun1 = self.mun1 + data.data * 10
         self.armData.dof4 = self.mun1 + 60
