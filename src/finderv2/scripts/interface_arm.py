@@ -32,15 +32,15 @@ class Interface_arm:
     def cbmab(self, data):
         self.armData.dof1 = data.data
     def cbma1(self, data):
-        self.armData.dof2 = data.data
+        self.armData.dof2 = data.data * .5
     def cbma2(self, data):
-        self.armData.dof3 = data.data
+        self.armData.dof3 = data.data * .5
     def cbsa1(self, data):
-        self.armData.dof4 = data.data
+        self.armData.dof4 = data.data + 60
     def cbsa2(self, data):
-        self.armData.dof5 = data.data
+        self.armData.dof5 = data.data * .5
     def cbsag(self, data):
-        self.armData.dof6 = data.data
+        self.armData.dof6 = data.data * 1
         
     def update(self):
         self.armPub.publish(self.armData)
