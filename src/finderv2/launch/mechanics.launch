@@ -17,7 +17,7 @@
     <node machine="c2_src" respawn="true" pkg="finder" type="interface_litarms.py" name="interface_litarms" />
     
     <!-- launching interfaces in remote system, correcting for virtual joy hook -->
-    <node machine="c1_src" respawn="true" pkg="finder" type="finderv2_testing_interface.py" name="finderv2_gui" >
+    <node machine="c1_src" respawn="true" pkg="finder" type="finderv2_testing_interface_2.py" name="finderv2_gui" >
     </node>
     <node machine="c1_opt" respawn="true" pkg="joy" type="joy_node" name="joy_node">
      <param name="dev" value="/dev/input/js1" />
