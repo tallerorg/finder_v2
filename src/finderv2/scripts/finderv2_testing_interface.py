@@ -52,6 +52,7 @@ class Finderv2TestingInterface:
         self.rightpad = 0
 
         #str = roslib.packages.get_pkg_dir('finder') + "/scripts/finderv2_testing_interface.glade"
+        #fix for user path, fix better
         str = expanduser("~") + "/workspace/catkin/src/finderv2/scripts/finderv2_testing_interface.glade"
         self.gladefile = str
 
